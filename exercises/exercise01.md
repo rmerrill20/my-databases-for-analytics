@@ -56,12 +56,12 @@ Why do you think this data type was selected?
 
 ### Answer
 
-_Write your explanation here._
+The data type for 'country.IndepYear' is smallInt. I think this data type was selected because the values expected in this category are qualified as small integers/ whole numbers which would not require the use of the larger integer data type. 
 
 ### Screenshot
 
 ```sql
-DESCRIBE country;
+<img width="1062" height="652" alt="image" src="https://github.com/user-attachments/assets/09af8704-6d34-4ddd-ae69-c88fa2272231" />
 ```
 
 ![Q2 Screenshot](screenshots/q2_indepyear.png)
@@ -75,7 +75,7 @@ Explain why your proposed data type might be better in some situations.
 
 ### Answer
 
-_Write your explanation here._
+I would use the YEAR data type since this field is for years. It is a better match for the information that belongs in this spot. 
 
 ---
 
