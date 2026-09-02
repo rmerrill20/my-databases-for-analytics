@@ -35,9 +35,9 @@ Why were these data types selected?
 
 ### Answer
 
-_Write your explanation here._
-
+The data type for 'country.Population' is int, which is a discrete value. Discrete values are fixed, as would be the value of the population. The data type for 'country.LifeExpectancy' is decimal (3,1) which is continuous, allowing for decimals and not quite full numbers. This would be the case for a life expectancy. 
 ### Screenshot
+<img width="1107" height="818" alt="Q1 Screenshot screenshotsq1_datatypes" src="https://github.com/user-attachments/assets/74835205-4294-4249-b8de-8376fac14961" />
 
 _Show the table structure or DESCRIBE output._
 
