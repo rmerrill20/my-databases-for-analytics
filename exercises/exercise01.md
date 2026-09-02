@@ -92,6 +92,7 @@ ORDER BY Name;
 ```
 
 ### Screenshot
+<img width="885" height="621" alt="Q4 Screenshot" src="https://github.com/user-attachments/assets/4da4b4f8-a521-41e0-ad7b-4b74dfc5c6fa" />
 
 ![Q4 Screenshot](screenshots/q4_cities_sorted.png)
 
@@ -112,6 +113,7 @@ ORDER BY GovernmentForm;
 ```
 
 ### Screenshot
+<img width="892" height="781" alt="Q5 Screenshot " src="https://github.com/user-attachments/assets/9436b56b-fe6d-47ac-9d15-f814b874432c" />
 
 ![Q5 Screenshot](screenshots/q5_government_forms.png)
 
@@ -129,7 +131,8 @@ FROM country
 WHERE Continent = 'Oceania';
 ```
 
-### Screenshot
+### Screenshot<img width="737" height="837" alt="Q6 Screenshot" src="https://github.com/user-attachments/assets/d2145f74-c80a-4cc8-96b4-3df2282d92a1" />
+
 
 ![Q6 Screenshot](screenshots/q6_oceania.png)
 
@@ -146,7 +149,8 @@ SELECT Name, CountryCode
 FROM city;
 ```
 
-### Screenshot
+### Screenshot<img width="411" height="820" alt="Q7 Screenshot" src="https://github.com/user-attachments/assets/619ef8dd-95cc-43be-8f6d-5d27e7698184" />
+
 
 ![Q7 Screenshot](screenshots/q7_city_countrycode.png)
 
@@ -164,7 +168,8 @@ SET Name = 'Nashville'
 WHERE Name = 'Nashville-Davidson';
 ```
 
-### Screenshot
+### Screenshot<img width="487" height="646" alt="Q8" src="https://github.com/user-attachments/assets/da309a53-97cc-4d2d-8f1e-a2dfee2c85ff" />
+
 
 ![Q8 Screenshot](screenshots/q8_update_city.png)
 
@@ -183,7 +188,8 @@ INSERT INTO country (Code, Name, Continent, Region, Population)
 VALUES ('NAR', 'Narnia', 'Europe', 'Fantasy', 1000000);
 ```
 
-### Screenshot
+### Screenshot<img width="1630" height="847" alt="Q9" src="https://github.com/user-attachments/assets/01bdc601-af52-4281-a63f-9407403b2881" />
+
 
 ![Q9 Screenshot](screenshots/q9_insert_narnia.png)
 
@@ -200,6 +206,7 @@ DELETE FROM country
 WHERE Code = 'NAR';
 ```
 
-### Screenshot
+### Screenshot<img width="1651" height="886" alt="Q10" src="https://github.com/user-attachments/assets/7750388a-a35a-4cfa-aa8e-2b858dec5c44" />
+
 
 ![Q10 Screenshot](screenshots/q10_delete_narnia.png)
