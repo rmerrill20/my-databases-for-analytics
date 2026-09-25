@@ -65,7 +65,20 @@ execute the query from Question 1 and
 ### Python Code
 
 ```python
-# Your three Python statements here
+query = """
+SELECT c.name AS country,
+       COUNT(cl.language) AS official_languages
+FROM country AS c
+JOIN countrylanguage AS cl
+  ON c.code = cl.countrycode
+WHERE cl.isofficial = 'T'
+GROUP BY c.name
+HAVING COUNT(cl.language) > 2
+ORDER BY official_languages DESC;
+"""
+df = pd.read_sql(query, engine)
+df
+
 ```
 
 ### Screenshot
@@ -86,7 +99,27 @@ to produce the following graph:
 ### Python Code
 
 ```python
-# Your Python code here
+graph_query = """
+    with num_of_languages as (
+  select c.name as name, count(l.language) as num_languages
+  from country as c
+  join countrylanguage as l on l.countrycode = c.code
+  where isOfficial = 'T'
+
+  group by c.name
+
+)
+
+select name, num_languages
+from num_of_languages
+where num_languages > 2
+
+order by num_languages desc
+"""
+graph_data = pd.read_sql_query(graph_query,engine)
+graph = graph_data.plot(x='name',y='num_languages',kind='bar',figsize=(5,4))
+plt.legend(loc='upper right')
+
 ```
 
 ### Screenshot
