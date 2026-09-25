@@ -1,8 +1,8 @@
 # Exercise 05: SQLDA Database - Dates, Data Quality, Arrays, and JSON
 
-- Name:
+- Name: Ronni Merrill
 - Course: Database for Analytics
-- Module:
+- Module: Module 5
 - Database Used: `sqlda` (Sample Datasets)
 - Tools Used: PostgreSQL (pgAdmin or psql)
 
@@ -43,7 +43,10 @@ year
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT DISTINCT 
+	EXTRACT(YEAR FROM sent_date) AS year
+FROM emails
+ORDER BY year;
 ```
 
 ### Screenshot
@@ -68,7 +71,12 @@ count   year
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT 
+	EXTRACT(YEAR FROM sent_date) AS year,
+	COUNT(*) AS messages_sent
+FROM emails
+GROUP BY EXTRACT(YEAR FROM sent_date)
+ORDER BY year;
 ```
 
 ### Screenshot
