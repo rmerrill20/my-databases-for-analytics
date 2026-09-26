@@ -98,7 +98,13 @@ Only include emails that contain **both** a sent date and an opened date.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT 
+	sent_date,
+	opened_date,
+	opened_date - sent_date AS interval
+FROM emails
+WHERE sent_date IS NOT NULL
+	AND opened_date IS NOT NULL;
 ```
 
 ### Screenshot
@@ -116,7 +122,14 @@ show emails that contain an **opened date BEFORE the sent date**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT 
+	sent_date,
+	opened_date,
+	opened_date - sent_date AS interval
+FROM emails
+WHERE opened_date IS NOT NULL
+	AND sent_date IS NOT NULL
+	AND opened_date < sent_date;
 ```
 
 ### Screenshot
@@ -135,7 +148,7 @@ After looking at the data, **why is this the case?**
 
 ### Answer
 
-_Write your explanation here._
+The opened dates/ times are based on actual local time when the customer opens the email. The sent date/ time are actually a default batch date/time. If you look, they have different dates but all have a timestamp of 15:00:00. 
 
 ### Screenshot (if requested by instructor)
 
@@ -176,7 +189,7 @@ CREATE TEMP TABLE customer_dealership_distance AS (
 
 ### Answer
 
-_Write your explanation here._
+Each of these creates a temporary table. The first set creates a temporary customer table, ignoring all customers who do not have addresses listed. For those with addresses listed, it maps the recorded longitude and latitude to create a point. The second table does the same but with dealership locations. In the third section of code, the temporary customer and dealership tables are connected together. This, along with the code, allows for the straight-line distance between dealerships to be calculated and can show the closest dealership to each customer. 
 
 ---
 
@@ -196,7 +209,12 @@ For example - dealership 1 is below:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+	dealership_id,
+	ARRAY_AGG(last_name || ',' || first_name) AS salespeople
+FROM salespeople
+GROUP BY dealership_id
+ORDER BY dealership_id;
 ```
 
 ### Screenshot
@@ -222,7 +240,19 @@ Reference image:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    d.dealership_id,
+    d.state,
+    ARRAY_AGG(s.first_name || ' ' || s.last_name) AS salespeople,
+    COUNT(s.salesperson_id) AS number_of_salespeople
+FROM dealerships AS d
+JOIN salespeople AS s
+    ON d.dealership_id = s.dealership_id
+GROUP BY
+    d.dealership_id,
+    d.state
+ORDER BY
+    d.state;
 ```
 
 ### Screenshot
@@ -239,7 +269,9 @@ the **customers** table to **JSON**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+	row_to_json(customers)
+FROM customers;
 ```
 
 ### Screenshot
@@ -266,7 +298,22 @@ Reference image:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT row_to_json(dealership_data)
+FROM (
+	SELECT
+		s.dealership_id,
+		ARRAY_AGG(s.last_name || ',' || s.first_name) AS salespeople,
+		d.state,
+		COUNT(*) AS salesperson_count
+	FROM salespeople AS s
+	JOIN dealerships AS d
+		ON s.dealership_id = d.dealership_id
+	GROUP BY 
+		s.dealership_id,
+		d.state
+	ORDER BY 
+		d.state
+) AS dealership_data;
 ```
 
 ### Screenshot
