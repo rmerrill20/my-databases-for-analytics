@@ -78,7 +78,6 @@ ORDER BY official_languages DESC;
 """
 df = pd.read_sql(query, engine)
 df
-
 ```
 
 ### Screenshot
@@ -116,10 +115,9 @@ where num_languages > 2
 
 order by num_languages desc
 """
-graph_data = pd.read_sql_query(graph_query,engine)
-graph = graph_data.plot(x='name',y='num_languages',kind='bar',figsize=(5,4))
-plt.legend(loc='upper right')
-
+graph_data = pd.read_sql_query(graph_query, engine)
+graph = graph_data.plot(x="name", y="num_languages", kind="bar", figsize=(5, 4))
+plt.legend(loc="upper right")
 ```
 
 ### Screenshot

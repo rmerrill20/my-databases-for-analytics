@@ -211,4 +211,3 @@ Press `Ctrl c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 This project is licensed under the [MIT License](./LICENSE).
 uv run python -m datafun.app
-
