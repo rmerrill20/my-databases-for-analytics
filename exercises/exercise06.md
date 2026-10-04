@@ -110,6 +110,7 @@ Save your diagram image in this repo and embed it below.
 **File name suggestion:** `star-schema.png` or `star-schema.jpg`
 
 #### Diagram
+<img width="1200" height="677" alt="image" src="https://github.com/user-attachments/assets/cb297b71-1ef5-4b13-8651-0317b1b925fc" />
 
 ![Star Schema Diagram](exercises/screenshots/star-schema.png)
 
