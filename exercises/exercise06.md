@@ -125,4 +125,14 @@ In 1-2 short paragraphs, explain:
 
 #### Design Notes
 
-_Write your design notes here._
+I chose the dimensions date, customer, and part. Date because this allows for sales to be
+analyzed by day, month, quarter, and year. Customer because this allows individual customers
+to be analyzed. Part was chosen because it allows me to analyze sales by the different part
+attributes such as part number, description, and category. 
+Daily sales is the fact table grain because this combines each day's sales into one versus 
+having them as individual orders or order lines. This is helpful since we are not looking at
+specific orders. 
+My design supports at least three of the analytic questions by allowing the sales to be filtered
+and complied across the date, customer, and part dimensions. It can show how many units of a
+part were sold during a specific day, how much money customers in a certain zip code spent
+during a month, etc. 
