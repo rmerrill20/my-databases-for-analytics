@@ -12,14 +12,14 @@ The original dataset was provided as a CSV file named `books.csv`. The cleaned d
 
 The original dataset contains 1,354 book records and 23 columns, including book identifiers, titles, author information, publication years, ratings, review counts, and image URLs.
 
-**Original data source URL:** [[Insert the public webpage where the dataset was obtained.]](https://www.kaggle.com/datasets/tanmay43sharma/goodreads-popular-books-dataset)
+**Original data source URL:** [[Kaggle Books Dataset]](https://www.kaggle.com/datasets/tanmay43sharma/goodreads-popular-books-dataset)
 
 ## 3. Database Summary
 
 The database was created in PostgreSQL and contains three primary relational tables:
 
 | Table         | Number of rows | Purpose                             |
-|---            |---            :|---                                  |
+|---------------|---------------:|-------------------------------------|
 | `books`       | 1,354          | Stores book details and ratings     |
 | `authors`     | 610            | Stores author identifiers and names |
 | `bookauthors` | 1,546          | Links books to their authors        |
@@ -167,7 +167,7 @@ The query returned 20 book-author associations. For example, *A Monster Calls* a
 
 This demonstrated that the database can represent multiple people associated with a book. The join also verified that the book and author records could be connected through the `BookAuthors` table.
 
-![alt text](joinquery_1.png)
+![Join Query 1](joinquery_1.png)
 
 ## 10. Analysis Query 2: Counting Books by Author
 
@@ -208,7 +208,7 @@ Four authors were each associated with 13 books. These results show how aggregat
 
 The counts describe the records in this dataset and do not necessarily represent each author's complete bibliography.
 
-![alt text](joinquery_2.png)
+![Join Query 2](joinquery_2.png)
 
 ## 11. Conclusion
 
