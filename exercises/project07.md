@@ -167,7 +167,7 @@ The query returned 20 book-author associations. For example, *A Monster Calls* a
 
 This demonstrated that the database can represent multiple people associated with a book. The join also verified that the book and author records could be connected through the `BookAuthors` table.
 
-![Join Query 1](joinquery_1.png)
+![Join Query 1](screenshots/joinquery_1.png)
 
 ## 10. Analysis Query 2: Counting Books by Author
 
@@ -208,7 +208,7 @@ Four authors were each associated with 13 books. These results show how aggregat
 
 The counts describe the records in this dataset and do not necessarily represent each author's complete bibliography.
 
-![Join Query 2](joinquery_2.png)
+![Join Query 2](screenshots/joinquery_2.png)
 
 ## 11. Conclusion
 
